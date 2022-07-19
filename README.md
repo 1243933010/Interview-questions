@@ -580,6 +580,19 @@ router.push({ path: '/register', query: { plan: 'private' } })
 ***原因：el-select 本身是  inline-block***
 **解决办法：给el-select 元素加行内 控制其宽度**
 
+***
+
 ## 37）babel原理
+### babel的转移过程分为三个阶段，这三个步骤分别是：
+- **解析parse:将代码解析生成抽象语法树（AST）,即词法分析和语法分析的过程。**
+- **转换Transform:对于AST进行变换的一些列的操作，babel接收得到的AST并通过babel-traverse对其进行遍历，在此过程中进行添加，更新以及移除等操作。**
+- **生成Generate:使用模块babel-generator。将变换后的AST再转换为JS代码**
+
+***
 
 ## 38） npm原理
+
+> **待添加**
+
+## 39） ts的type和interface有什么区别
+> **type只能定义基本类型比如bool，interface可以定义复杂类型比如object，array**

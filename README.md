@@ -126,54 +126,56 @@
  - **虽然await阻塞异步函数向后执行，看起来像是同步的，但是它本质还是异步的，我们同样可以并行执行其他的不关联的异步操作，而同步函数不能并行执行。**
 
 
-8) vue的11个生命周期都是什么
+## 8) vue的11个生命周期都是什么
 
-创建阶段的四个：
-beforeCreate：实例创建之前。
-created：实例创建之后。
-beforeMount：组件挂载之前。
-mounted：组件挂载之后。
+   ### **创建阶段的四个：**
+ - **beforeCreate：实例创建之前。**
+ - **created：实例创建之后。**
+ - **beforeMount：组件挂载之前。**
+ - **mounted：组件挂载之后。**
 
-运行阶段的两个：
+ ### **运行阶段的两个：**
 
-beforeUpdate：数据改变，视图更新之前。
-updated：试图更新之后。
+ - **beforeUpdate：数据改变，视图更新之前。**
+ - **updated：试图更新之后。**
 
-销毁阶段的两个：
-beforeDestroy：实例销毁之前。
-destroyed：实例销毁之后。
+ ### **销毁阶段的两个：**
+ - **beforeDestroy：实例销毁之前。**
+ - **destroyed：实例销毁之后。**
 
-其他三个：
+ ### **其他三个：**
 
-activated  被 keep-alive 缓存的组件激活时调用。
-deactivated 被 keep-alive 缓存的组件停用时调用。
-errorCaptured 2.5.0+ 新增当捕获一个来自子孙组件的错误时被调用
+ - **activated  被 keep-alive 缓存的组件激活时调用。**
+ - **deactivated 被 keep-alive 缓存的组件停用时调用。**
+ - **errorCaptured 2.5.0+ 新增当捕获一个来自子孙组件的错误时被调用**
 
-
-
-9)vue的路由周期
-分3块：全局守卫、路由独立守卫、组件内守卫
-
-router.beforeEach 全局前置守卫
-beforeResolve  全局解析守卫
-afterEach   全局后置守卫、钩子
+***
 
 
-beforeEnter
+ ## 9)vue的路由周期
+ ### ***分3块：全局守卫、路由独立守卫、组件内守卫***
 
+#### **全局守卫**
+ - **router.beforeEach 全局前置守卫**
+ - **beforeResolve  全局解析守卫**
+ - **afterEach   全局后置守卫、钩子**
 
-beforeRouteEnter 路由跳转，使用此组件时触发
- beforeRouteUpdate 组件被复用时，触发此方法
- beforeRouteLeave 路由跳转，不适用此组件时触发
+#### **路由独立守卫**
+ - **beforeEnter**
 
+#### **组件内守卫**
+ - **beforeRouteEnter 路由跳转，使用此组件时触发**
+ - **beforeRouteUpdate 组件被复用时，触发此方法**
+ - **beforeRouteLeave 路由跳转，不适用此组件时触发**
 
+***
 
- 10) vue的两种路由形式是什么，通过什么实现就是什么api的
- hash模式
-#后面 hash 值的变化，并不会导致浏览器向服务器发出请求，浏览器不发出请求，也就不会刷新页面。每次 hash 值的变化，会触发hashchange 这个事件，通过这个事件我们就可以知道 hash 值发生了哪些变化。然后我们便可以监听hashchange来实现更新页面部分内容的操作：
+ ## 10) vue的两种路由形式是什么，通过什么实现就是什么api的
+ ### hash模式
+> **#后面 hash 值的变化，并不会导致浏览器向服务器发出请求，浏览器不发出请求，也就不会刷新页面。每次 hash 值的变化，会触发hashchange 这个事件，通过这个事件我们就可以知道 hash 值发生了哪些变化。然后我们便可以监听hashchange来实现更新页面部分内容的操作：=**
 
-history模式
-因为HTML5标准发布，多了两个 API，pushState() 和 replaceState()。通过这两个 API （1）可以改变 url 地址且不会发送请求，（2）不仅可以读取历史记录栈，还可以对浏览器历史记录栈进行修改。
+### history模式
+ > **因为HTML5标准发布，多了两个 API，pushState() 和 replaceState()。通过这两个 API （1）可以改变 url 地址且不会发送请求，（2）不仅可以读取历史记录栈，还可以对浏览器历史记录栈进行修改。**
 
 除此之外，还有popState().当浏览器跳转到新的状态时，将触发popState事件.
 

@@ -192,15 +192,15 @@ return result instanceof Object? result: obj;
 
 
 ### **vue的优化**
-> 1、vue2的vfor优先级比vif大，不要放同一层级  
-> 2、合理使用路由懒加载、异步组件  
-> 3、第三方插件按需加载或者使用cdn
+> ***1、vue2的vfor优先级比vif大，不要放同一层级***  
+> ***2、合理使用路由懒加载、异步组件***  
+> ***3、第三方插件按需加载或者使用cdn***
 
 ### **webpack的优化**
-> 1、使用多线程打包happypack  
-> 2、利用浏览器缓存，只改变已修改的文件的hash文件名，可以大大提升项目更新加载速度  
-> 3、利用TerserPlugin压缩js代、OptimizeCSSAssetsPlugin压缩css代码、HtmlWebpackPlugin压缩html代码  
-> 4、利用 tree shaking也就是数摇，对没用到的代码进行删减，缩小项目体积
+> ***1、使用多线程打包happypack***  
+> ***2、利用浏览器缓存，只改变已修改的文件的hash文件名，可以大大提升项目更新加载速度***  
+> ***3、利用TerserPlugin压缩js代、OptimizeCSSAssetsPlugin压缩css代码、HtmlWebpackPlugin压缩html代码***  
+> ***4、利用 tree shaking也就是数摇，对没用到的代码进行删减，缩小项目体积***
 
 ***
 
@@ -574,11 +574,11 @@ router.push({ path: '/register', query: { plan: 'private' } })
 ***
 
 ## 36）elemet有哪些坑？
-> - 在 el-tree 标签上设置动态设置一个 key 会导致 filter 功能失效，为了避免 vue 的“就地复用原则”所以需要在每次关闭弹窗或者其他情况需要使用 setCheckedKeys([]) 来手动清空  
-> - 用官网上提供的autoplay不起作用，将interval设置为0方可  
-> - 使用el-select 不能继承父元素的宽度 
-原因：el-select 本身是  inline-block
-解决办法：给el-select 元素加行内 控制其宽度
+> - **在 el-tree 标签上设置动态设置一个 key 会导致 filter 功能失效，为了避免 vue 的“就地复用原则”所以需要在每次关闭弹窗或者其他情况需要使用 setCheckedKeys([]) 来手动清空**  
+> - **用官网上提供的autoplay不起作用，将interval设置为0方可**  
+> - **使用el-select 不能继承父元素的宽度** 
+***原因：el-select 本身是  inline-block***
+**解决办法：给el-select 元素加行内 控制其宽度**
 
 ## 37）babel原理
 

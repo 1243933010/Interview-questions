@@ -709,4 +709,50 @@ f2.__ proto__ === Fn.prototype;
 
 
 ## 45)水平居中和垂直居中
+> - table + table-cell + vertical-align: middle  
+> 适用情景：多对象（垂直居中）
 
+> - absolute + margin 负值 
+
+> - absolute + translate 
+
+> - Flex + align-items  
+> 适用情景：多行文字（垂直居中） 
+
+> - Flex + justify-content  
+> 适用情景：多行文字（水平居中）
+
+
+## 46) html5有哪些新增特性?
+
+  > ### canvas元素
+  
+  > ### 表单元素
+
+  #### 新增的表单元素
+
+- **```<datalist>```：元素规定输入域的选项列表，使用```<input>```元素的list元素与```<datalist>```**
+
+- **```<keygen>```：提供一种检验用户的可靠方法，标签规定用于表单的密钥对生成器字段**
+
+- **```<output>```：用于不用类型的输出，比如计算或脚本输出**
+
+#### 新增的表单属性
+
+- **placehoder属性：简短的提示在用户输入值前会显示在输入域上，既默认框提示**
+
+- **required属性：是一个boolean属性，要求填写的输入域不为空**
+
+- **pattern属性：描述了一个正则表达式用于验证```<input>```元素的值**
+
+ - **max / min属性：最大最小值**
+
+ - **step属性：为输入域规定合法的数字间隔**
+
+ - **height / width属性：用于image类型的```<input>```标签的图像高度和宽度**
+
+ - **autofocus属性：是一个boolean属性，在页面加载时自动获得焦点**
+
+ - **multiple属性：是一个boolean属性，规定```<input>```元素中选择多个值**
+
+### 媒体元素

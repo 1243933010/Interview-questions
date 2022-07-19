@@ -626,4 +626,29 @@ router.push({ path: '/register', query: { plan: 'private' } })
 
 ***
 
-## 42）
+## 42）call、apply、bind
+### **call**
+```javascript
+当前实例(函数fn)通过原型链的查找机制，找到function.prototype上的call方法，function call(){[native code]}
+
+把找到的call方法执行
+当call方法执行的时候，内部处理了一些事情
+1.首先把要操作的函数中的this关键字变为call方法第一个传递的实参
+2.把call方法第二个及之后的实参获取到
+3.把要操作的函数执行，并且把第二个以后传递进来的实参传递给函数
+```
+
+### **apply**
+```javascript
+apply：和call基本上一致，唯一区别在于传参方式
+apply把需要传递给fn的参数放到一个数组（或者类数组）中传递进去，虽然写的是一个数组，但是也相当于给fn一个个的传递
+fn.call(obj, 1, 2);
+fn.apply(obj, [1, 2]);
+```
+
+### **bind**
+```javascript
+bind：语法和call一模一样，区别在于立即执行还是等待执行，bind不兼容IE6~8
+fn.call(obj, 1, 2); // 改变fn中的this，并且把fn立即执行
+fn.bind(obj, 1, 2); // 改变fn中的this，fn并不执行
+```

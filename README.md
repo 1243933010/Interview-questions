@@ -66,16 +66,16 @@
 2.设置原型链。把构造函数的prototype属性 作为空对象的原型，同时也有了prototype的方法
 3.改变this指向。this赋值给这个空对象，执行构造函数函数，完成赋值
 4.如果函数没有返回值 就返回这个this对象 -->
-  1）创建一个空对象
+  - **创建一个空对象**
 ```javascript
  let obj = new Object()
 ```
-  2）设置原型链
+  - **设置原型链,把函数的显式原型指向新创建的对象上(指向隐式原型)**
 ```javascript
 obj.__proto__= Fn.prototype;
 ```
 
-  3）改变this指向，使Fn的this指向obj，并执行Fn函数体
+  - **改变this指向，使Fn的this指向新创建的对象上，并执行Fn函数体**
 ```javascript
 let result =Fn.call(fn);
 ```
@@ -652,3 +652,61 @@ bind：语法和call一模一样，区别在于立即执行还是等待执行，
 fn.call(obj, 1, 2); // 改变fn中的this，并且把fn立即执行
 fn.bind(obj, 1, 2); // 改变fn中的this，fn并不执行
 ```
+
+***
+
+## 43) js的显式原型和隐式原型？原型链是什么？为什么要有原型链？
+**显式原型**：*prototype*  
+**隐式原型**：*__ proto__*
+
+### 1.显式原型和隐式原型是什么？
+```javascript
+在js中万物皆对象，方法(Function)是对象，方法的原型（Function.prototype）是对象，对象具有属性（__ proto__）称为隐式原型，对象的隐式原型指向构造该对象的构造函数的显式原型 （prototype）。
+
+方法(Function)是一个特殊的对象，除了和其他对象一样具有__proto__属性以外，它还有一个自己特有的原型属性(prototype)，这个属性是一个指针，指向原型对象。原型对象也有一个属性叫constructor，这个属性包含一个指针，指向原构造函数
+```
+
+> - 注意：通过Function.prototype.bind方法构造出来的函数没有prototype属性。
+> - 注意：Object.prototype.这个对象的是个例外，它的__proto__值为null。
+
+### 2.二者的关系
+> 隐式原型指向创建这个对象的构造函数的prototype
+
+
+### 3.二者的区别
+> **prototype:专属于函数的一个属性，类型为对象，叫原型对象；**  
+**作用：为了给将来自身所在的构造函数被new出来的实例做父级使用的**  
+
+> **__ proto__：专属于对象数据的一个属性，类型为对象，叫隐士原型，**  
+**作用：找父级**
+
+>特性  
+>- 当某个对象自身不具有某个属性或方法时，会找父级
+>- 当这个对象是被new出来的实例时，这个对象的父级（__ proto__）就是当前被new出来的构造函数的prototype
+
+```javascript
+let fn = function (){
+    
+}
+let aa = new fn()
+console.log(aa.__proto__===fn.prototype)
+VM1264:5 true
+```
+
+```javascript
+function Fn(){};
+var f = new Fn();
+var f2 = new Fn();
+Fn.prototype.constructor === Fn;
+f.__ proto__ === Fn.prototype;
+f.__ proto__.constructor === Fn;
+f.__ proto__ === f2.__ proto__ ;
+f2.__ proto__ === Fn.prototype;
+```
+
+## 44）解释box-sizing:border-box作用？好处？
+> 将border和padding数值包含在width和height之内，这样的好处就是修改border和padding数值盒子的大小不变。
+
+
+## 45)水平居中和垂直居中
+

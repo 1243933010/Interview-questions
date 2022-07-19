@@ -611,3 +611,19 @@ router.push({ path: '/register', query: { plan: 'private' } })
 > - ***gzip压缩和cdn加载，解决原因2后我们发现加载并不一定会太快，因为vendor.js和app.css还是相对较大，有两种方式缩小***
 > - **1、后台对nginx的nginx.conf进行配置，对指定文件类型进行压缩，前端在config中设置productionGzip属性为true**
 > - **2、对一些编译在vendor文件的插件比如vuex等，可以通过cdn的方式引入，来进一步缩减文件的大小**
+
+***
+## 41）http的请求头都有哪些
+> -  **Accept	告诉服务器自己允许哪些媒体类型	Accept: text/plain**
+> - **Accept-Charset	浏览器申明可接受的字符集	Accept-Charset: utf-8**
+> - **Accept-Encoding	浏览器申明自己接收的编码方法	Accept-Encoding: gzip, deflate**
+> - **Accept-Language	浏览器可接受的响应内容语言列表	Accept-Language: en-US**
+> - **Authorization	用于表示 HTTP 协议中需要认证资源的认证信息	Authorization: Basic OSdjJGRpbjpvcGVul ANIc2SdDE==**
+> - **Expect	表示客户端要求服务器做出特定的行为	Expect: 100-continue**
+> - **From	发起此请求的用户的邮件地址	From: user@itbilu.com**
+> - **Host	表示服务器的域名以及服务器所监听的端口号	Host: www.itbilu.com:80**
+> - **Referer	表示浏览器所访问的前一个页面，可以认为是之前访问页面的链接将浏览器带到了当前页面	Referer: http://itbilu.com/nodejs**
+
+***
+
+## 42）

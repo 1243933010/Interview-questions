@@ -114,12 +114,14 @@ return result instanceof Object? result: obj;
 
  ## 6) es6常用api
 
-   > **let所声明的变量一定在声明后使用，否则报错**  
-   **var命令会发生变量提升现象，即变量可以在声明之前使用，值为undefined。**  
-   **模板字符串**  
-   **解构赋值**  
-   **带参数默认值的函数  rest参数  箭头函数(箭头函数不能使用new关键字来实例化对象)**  
-   **promise await class**
+   - **let所声明的变量一定在声明后使用，否则报错**  
+   - **var命令会发生变量提升现象，即变量可以在声明之前使用，值为undefined。**  
+   - **模板字符串**  
+   - **解构赋值**  
+   - **带参数默认值的函数  rest参数  箭头函数(箭头函数不能使用new关键字来实例化对象)**  
+   - **promise await class**
+   - **this关键字总是指向函数所在的当前对象，ES6 又新增了另一个类似的关键字super，指向当前对象的原型对象**
+
 
 
 
@@ -741,18 +743,49 @@ f2.__ proto__ === Fn.prototype;
 
 - **placehoder属性：简短的提示在用户输入值前会显示在输入域上，既默认框提示**
 
-- **required属性：是一个boolean属性，要求填写的输入域不为空**
-
-- **pattern属性：描述了一个正则表达式用于验证```<input>```元素的值**
-
- - **max / min属性：最大最小值**
-
- - **step属性：为输入域规定合法的数字间隔**
-
- - **height / width属性：用于image类型的```<input>```标签的图像高度和宽度**
+- **pattern属性：描述了一个正则表达式用于验证```<input>```元素的值***
 
  - **autofocus属性：是一个boolean属性，在页面加载时自动获得焦点**
 
  - **multiple属性：是一个boolean属性，规定```<input>```元素中选择多个值**
 
-### 媒体元素
+### 新增拖拽api、audio和video标签api，canvas、localstorage、webworker多进程
+
+
+## 47）css3新特性
+### 伪类选择器
+- **:root**
+- **:not**
+- **:only-child**
+- **:first-child和：last-child**
+- **:nth-child(n)和：nth-last-child(n)**
+- **nth-of-type(n) 和:nth-last-of-type(n)**
+- **target**
+- **:empty**
+
+### 边框与圆角
+- **CSS3圆角 border-radius**
+- **盒阴影 box-shadow**
+- **边框图像 border-image**
+
+### CSS3背景与渐变
+ - **background-image：设置一个元素的背景图像。**
+ - **background-origin：规定 background-position 属性相对于什么位置来定位。**
+ - **background-clip：规定背景的绘制区域。**
+ - **linear-gradient()：线性渐变。**
+ - **radial-gradient()：径向渐变。**
+
+### CSS3过渡 transition
+#### 定义：允许css的属性值在一定时间区间内平滑的过渡，在鼠标点击，鼠标滑过或对元素任何改变中触发，并圆滑地以动画形式改变css的属性值。
+
+
+### css3变换 transform 
+#### 定义：让一个元素在一个坐标系统中变形，这个属性包含一系列的变形函数，可以移动，旋转，缩放元素。
+
+### css3动画 animation
+#### 定义：使元素从一种样式逐渐变化到另外一种样式的效果。
+
+
+
+
+

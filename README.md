@@ -77,7 +77,7 @@ obj.__proto__= Fn.prototype;
 
   - **改变this指向，使Fn的this指向新创建的对象上，并执行Fn函数体**
 ```javascript
-let result =Fn.call(fn);
+let result =Fn.call(obj);
 ```
 
   4）判断Fn的返回值类型：如果是值类型，返回fn。如果是引用类型，就返回这个引用类型的对象

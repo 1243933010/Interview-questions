@@ -15,12 +15,23 @@
 ### rgba不支持IE8
 > ***解决方案:可以用 opacity***
 
-### 1.背景透明问题
+### 背景透明问题
 > ***IE: filter: alpha(opacity=10);***
 > 
 > ***FF: opacity:0.6;***
  *** 
 
+ ### 获取页面滚动的距离
+ > ***var scrollTop = document.documentElement.scrollTop || document.body.scrolltop;***
+
+###  老版本浏览器兼容 innerText 和 innerContent
+```javascript
+ if (element.textContent) {
+    return element.textContent ;
+ } else {
+    return element.innerText;
+ }
+```
 ## .CSS3前缀  
 
 > ***-webkit-  webkit渲染引擎  chrome/safari***  

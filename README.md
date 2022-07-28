@@ -713,20 +713,49 @@ f2.__ proto__ === Fn.prototype;
 > 将border和padding数值包含在width和height之内，这样的好处就是修改border和padding数值盒子的大小不变。
 
 
-## 45)水平居中和垂直居中
-> - table + table-cell + vertical-align: middle  
-> 适用情景：多对象（垂直居中）
+## 45)css垂直居中
+- ### 1
+```javascript
+.child{
+  position:relative;
+  top:50%;
+  transform:translateY(-50%)
+}
+```
 
-> - absolute + margin 负值 
+- ### 2
+```javascript
+.parent{
+ position:relative;
+}
+.child{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%)
+}
+```
 
-> - absolute + translate 
+- ### 3
+```javascript
+.parent{
+ display:flex;
+}
+.child{
+  justify-content:center;
+  align-self:center;
+}
+```
 
-> - Flex + align-items  
-> 适用情景：多行文字（垂直居中） 
-
-> - Flex + justify-content  
-> 适用情景：多行文字（水平居中）
-
+- ### 4
+```javascript
+.parent{
+  display:table;
+}
+.child{
+  display:table-cell;
+  vertical-align:middle;
+}
+```
 
 ## 46) html5有哪些新增特性?
 
@@ -788,6 +817,19 @@ f2.__ proto__ === Fn.prototype;
 ### css3动画 animation
 #### 定义：使元素从一种样式逐渐变化到另外一种样式的效果。
 
+
+
+## 48）css3画一个三角
+
+```javascript
+.triangle{
+		 	border-left:50px solid transparent;
+			border-right:50px solid transparent;
+			border-bottom:50px solid #333;
+			width:0;
+			height:0;
+	}
+```
 
 
 

@@ -24,7 +24,7 @@
  ### 获取页面滚动的距离
  > ***var scrollTop = document.documentElement.scrollTop || document.body.scrolltop;***
 
-###  老版本浏览器兼容 innerText 和 innerContent
+###  老版本浏览器兼容 innerText 和 textContent
 ```javascript
  if (element.textContent) {
     return element.textContent ;

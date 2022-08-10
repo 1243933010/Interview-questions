@@ -753,7 +753,7 @@ f2.__ proto__ === Fn.prototype;
 }
 .child{
   justify-content:center;
-  align-self:center;
+  align-items:center;
 }
 ```
 
@@ -842,6 +842,20 @@ f2.__ proto__ === Fn.prototype;
 	}
 ```
 
+## 49) vue父子组件执行顺序
+```javascript
+挂载阶段
+父beforeCreate -> 父created -> 父beforeMount -> 子beforeCreate -> 子created -> 子beforeMount -> 子mounted -> 父mounted
+
+
+
+更新阶段
+父beforeUpdate -> 子beforeUpdate -> 子updated -> 父updated
+
+
+销毁阶段
+父beforeDestroy -> 子beforeDestroy -> 子destroyed -> 父destroyed
+```
 
 
 

@@ -857,5 +857,39 @@ f2.__ proto__ === Fn.prototype;
 父beforeDestroy -> 子beforeDestroy -> 子destroyed -> 父destroyed
 ```
 
+## 50） keep-live原理
+### 在具体实现上，keep-alive在内部维护了一个key数组和一个缓存对象
+```javascript
+//keep-alive 内部声明周期函数
+  created () {
+    this.cache = Object.create(null)
+    this.keys = []
+  },
+```
+  **key数组记录目前缓存的组件key值，如果组件没有指定key值，会自动生成一个唯一的key值**
+  **cache对象会以key值为键，vnode为值，用于缓存组件对应的虚拟DOM**
+**在keep-alive的渲染函数中，其基本逻辑是判断当前渲染的vnode是否有对应的缓存，如果有，会从缓存中读取到对应的组件实例，如果没有就会把它缓存。**
+
+**当缓存的数量超过max设置的数值时，keep-alive会移除key数组中的第一个元素**
+```javascript
+//keep-alive 有三个属性
+  1.include ：记录的是哪些组件可以被缓存
+
+  2.exclude:   记录了哪些组件不能被缓存
+
+  3.max: 记录的是可以缓存组件的最大数量
+```
+
+## 51） 常见的几种设计模式
+
+### - **外观模式（Facade Pattern）**
+### - **代理模式（Proxy Pattern）**
+### - **工厂模式（Factory Pattern）**
+### - **单例模式（Singleton Pattern）**
+### - **策略模式（Strategy Pattern）**
+### - **迭代器模式（Iterator Pattern）**
+### - **观察者模式（Observer Pattern）**
+### - **中介者模式（Mediator Pattern）**
+### - **访问者模式（Visitor Pattern）**
 
 
